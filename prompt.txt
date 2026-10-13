@@ -1,0 +1,1 @@
+Is the point at latitude {lat_abs:.3f}° {ns}, longitude {lon_abs:.3f}° {ew} on land or in the sea? Answer with one word: land or sea.

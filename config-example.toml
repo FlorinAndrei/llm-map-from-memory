@@ -1,0 +1,49 @@
+# Configuration for llm_map.py. See CLAUDE.md for the reasons behind the values.
+
+width = 320
+height = 160
+out_dir = "maps"
+basemap = "maps/basemap.png"   # optional, for the agreement report
+save_interval = 60             # seconds
+max_consecutive_errors = 10
+
+# [R, G, B]. The LLM map stores its state in these exact values; changing one
+# orphans every maps/llm_*.png. The four must differ by 32 or more in grayscale.
+[colors]
+land = [240, 170, 130]
+sea = [0, 51, 102]
+blank = [255, 255, 255]    # not asked yet
+unknown = [115, 115, 115]  # no usable answer
+
+# One prompt for all models, a Python format string; fields are listed in CLAUDE.md.
+prompt_file = "prompt.txt"
+
+[[endpoints]]
+url = "http://mac:11434/v1"
+# api_key = "sk-..."   # optional
+timeout = 120          # seconds per request
+max_retries = 2
+
+  # Everything under params goes into the request body as is.
+  # reasoning_effort = "none" turns thinking off; delete the line to think.
+
+  [[endpoints.models]]
+  name = "qwen3.8:27b-mlx"
+  [endpoints.models.params]
+  temperature = 0.0
+  max_tokens = 4000
+  reasoning_effort = "none"
+
+  [[endpoints.models]]
+  name = "gemma4:31b-mlx"
+  [endpoints.models.params]
+  temperature = 0.0
+  max_tokens = 4000
+  reasoning_effort = "none"
+
+  [[endpoints.models]]
+  name = "ornith-1.5:35b"
+  [endpoints.models.params]
+  temperature = 0.0
+  max_tokens = 4000
+  reasoning_effort = "none"

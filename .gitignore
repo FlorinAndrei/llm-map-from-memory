@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Downloaded source data (fetch with ./download_data.sh)
+data/
+
+# Generated maps and in-progress temp files
+maps/
+.*.png.*.tmp
+
+# Main config file
+config.toml
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
