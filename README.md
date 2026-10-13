@@ -11,6 +11,10 @@ Tested with Ollama, but most OpenAI API endpoints should be fine. Example:
 
 ![results](composite.png)
 
+Link to Substack article:
+
+https://florinandrei.substack.com/p/how-fuzzy-is-an-llms-knowledge
+
 ## Setup
 
 ```
